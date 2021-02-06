@@ -13,6 +13,16 @@ body {
     }
 }
 
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 @keyframes drop {
     0% {
         bottom: 0px;
@@ -85,17 +95,201 @@ body {
     z-index: 2;
     animation: wave 1s ease-out forwards;
     border-radius: 60px;
+}
+
+/* Transparent Overlay */
+.loading:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: fade-in 1s;
+    background: radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+
+    background: -webkit-radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+}
+
+.done {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: fade-out 1s;
+    background: radial-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+
+    /* background: -webkit-radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8)); */
 } /* End of Preloader */
 
+/* Parallax Scroll */
+.separator-type,
+.title-type,
+.intro-type,
+.content-type .intro-type p {
+    position: relative;
+}
+
+.intro-type .container {
+    padding: 50px 0px 102px 0px !important;
+}
+
+.company-heading h1 {
+    margin-bottom: 60px;
+    padding-bottom: 50px;
+    line-height: 80px;
+    color: black;
+    font-weight: 700 !important;
+    text-align: center;
+}
+
+.jumbo {
+    margin-top: 50px;
+}
+
+.seo-header,
+.product-header,
+.intro-type .container h1.white,
+.company-heading h1 {
+    font-weight: 100 !important;
+    text-transform: capitalize;
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.parallax {
+    background-attachment: inherit !important;
+}
+
+.parallax {
+    background-attachment: inherit !important;
+}
+
+.parallax {
+    background-attachment: inherit !important;
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    z-index: -10;
+}
+
+.ct-btn-scroll {
+    width: 49px;
+    height: 49px;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-top: 500px;
+    z-index: 9;
+    border-radius: 50%;
+    -webkit-transition: background-color 0.25s ease-in-out;
+    transition: background-color 0.25s ease-in-out;
+} /* End of Parallax Scroll */
+
+.section {
+    height: 100vh;
+}
+
+/* About Text */
+.section-text {
+    font-size: 1.4rem;
+}
+.section-header {
+    font-size: 2.7rem;
+    padding-bottom: 13px;
+    text-align: left;
+}
 
 
 /* Large Screens */
 @media screen and (min-width: 601px) {
+    .welcome {
+        /* margin-top: 20px; */
+        font-size: 4rem;
+    }
     
+    /* icon size */
+    .landing-icon {
+        height: 200px;
+        width: auto;
+        position: relative;
+    }
 }
 
 /* Mobile */
 @media screen and (max-width: 600px) {
-    /* Liquid Loading */
+    .welcome {
+        /* margin-top: 20px; */
+        font-size: 3rem;
+    }
+
+    /* icon size */
+    .landing-icon {
+        height: 250px;
+        width: auto;
+    }   
+
+    /* Button/Test Overlay on img */
+    .img-wrapper {
+        position: relative;
+    }
+
+    /* .img-responsive {
+    width: 100%;
+    height: auto;
+} */
+
+    .img-overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .img-overlay:before {
+        content: ' ';
+        display: block;
+        /* adjust 'height' to position overlay content vertically */
+        height: 50%;
+    }
+
+    .intro-type .container {
+        padding: 10px 0px 102px 0px !important;
+    }
+
+    .img-logo {
+        margin-top: 0px;
+    }
+
+    .welcome {
+        margin-bottom: 0px;
+    }
+
+    .company-heading h1 {
+        margin-bottom: 10px;
+        padding-bottom: 0px;
+        line-height: 80px;
+    }
+
+    .section-header {
+        font-size: 2.5rem;
+        padding-bottom: 13px;
+        text-align: center;
+    }
+    
+    .section-text {
+        font-size: 1.4rem;
+    }
 
 }
